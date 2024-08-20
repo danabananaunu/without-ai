@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang = "eng">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <title>Whiteboard</title>
+        <link rel = "stylesheet" href = "styles.css">  
+        <link rel="icon" type="image/x-icon" href="/favicon.ico">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+    </head>
+    <body>
+        <div id="whiteboard"></div>
+
+        <button id="add-note">Add note</button>
+        <button id="color-picker-btn">Color</button>
+        <button id="add-text-btn">Add Text</button>
+
+        <div class="dropdown-menus hidden">
+            <label for="font-select">Font:</label>
+            <select id="font-select">
+                <option value="Arial">Arial</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Courier New">Courier New</option>
+            </select>
+    
+            <label for="style-select">Style:</label>
+            <select id="style-select">
+                <option value="normal">Normal</option>
+                <option value="italic">Italic</option>
+                <option value="bold">Bold</option>
+            </select>
+
+            <label for="size-select">Size:</label>
+            <select id="size-select">
+                <option value="12">12</option>
+                <option value="14">14</option>
+                <option value="16">16</option>
+                <option value="18">18</option>
+                <option value="20">20</option>
+                <option value="22">22</option>
+                <option value="24">24</option>
+            </select>
+        </div>
+
+        <div id="color-picker-modal" class="modal">
+            <div class="modal-content">
+                <div class="color-option" data-color="#9370DB"></div>
+                <div class="color-option" data-color="#FFFF00"></div>
+                <div class="color-option" data-color="#FF0000"></div>
+                <div class="color-option" data-color="#ADD8E6"></div>
+                <div class="color-option" data-color="#90EE90"></div>
+                <div class="color-option" data-color="#ffa500"></div>
+            </div>
+        </div>
+
+        <div class="timer-container">
+            <div class="input-container">
+              <label for="minutesInput">Minutes:</label>
+              <input id="minutesInput" type="number" value="0"/>
+              <label for="secondsInput">Seconds:</label>
+              <input id="secondsInput" type="number" value="0"/>
+            </div>
+            <p id="timerr">00:00</p>
+            <div class="button-container">
+              <button id="startButton">Start</button>
+              <button id="stopButton">Stop</button>
+              <button id="resetButton">Reset</button>
+            </div>
+          </div>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src = "script.js"></script>
+    </body>
+</html>
